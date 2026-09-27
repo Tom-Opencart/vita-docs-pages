@@ -112,6 +112,14 @@
       ]
     },
     {
+      id: "ai",
+      title: "AI и Инспектор",
+      icon: "fa-solid fa-cube",
+      items: [
+        { id: "ai-inspector", title: "Конструктор AI (помощник на витрине)" }
+      ]
+    },
+    {
       id: "modules",
       title: "Модули Вита",
       icon: "fa-solid fa-puzzle-piece",
