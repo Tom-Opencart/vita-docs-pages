@@ -482,7 +482,7 @@
       bySection[item.section].push(item);
     });
 
-    const sectionOrder = ["getting-started", "header", "home", "catalog", "account", "footer", "design", "modules", "email", "tips"];
+    const sectionOrder = ["getting-started", "header", "home", "catalog", "account", "footer", "design", "ai", "modules", "email", "tips"];
     const sectionLabels = {
       "getting-started": "Быстрый старт",
       "header": "Шапка сайта",
@@ -491,6 +491,7 @@
       "account": "Аккаунт и оформление",
       "footer": "Подвал сайта",
       "design": "Дизайн и стили",
+      "ai": "AI и Инспектор",
       "modules": "Модули Вита",
       "email": "Письмо о заказе",
       "tips": "Советы и FAQ"
