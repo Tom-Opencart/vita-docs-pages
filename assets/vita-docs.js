@@ -143,10 +143,12 @@
       title: "Письмо о заказе (вкладка панели)",
       icon: "fa-solid fa-envelope",
       items: [
-        { id: "email-branding", title: "Оформление и брендинг" },
-        { id: "email-content", title: "Содержимое письма" },
-        { id: "email-footer", title: "Подвал и контакты" },
-        { id: "email-social", title: "Соцсети в письме" }
+        { id: "email-branding", title: "Оформление письма" },
+        { id: "email-content", title: "Тема и приветствие" },
+        { id: "email-blocks", title: "Что показывать в письме" },
+        { id: "email-social", title: "Значки соцсетей" },
+        { id: "email-contacts", title: "Контакты в подвале" },
+        { id: "email-footer", title: "Подвал письма" }
       ]
     },
     {
