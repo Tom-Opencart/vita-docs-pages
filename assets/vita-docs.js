@@ -134,7 +134,11 @@
         { id: "module-forms", title: "Конструктор форм" },
         { id: "module-visual", title: "Визуальный конструктор" },
         { id: "module-wall", title: "Стены категорий" },
-        { id: "module-html", title: "HTML-блоки" },
+        { id: "module-html", title: "Универсальные HTML-блоки" },
+        { id: "module-html-placement", title: "HTML-блок: где показывать" },
+        { id: "module-html-shortcodes", title: "HTML-блок: живые вставки" },
+        { id: "module-html-constructor", title: "HTML-блок: Конструктор" },
+        { id: "module-html-examples", title: "HTML-блок: готовые сценарии" },
         { id: "module-allinone", title: "All-in-One / Витрина" }
       ]
     },
