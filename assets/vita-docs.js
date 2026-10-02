@@ -102,11 +102,12 @@
       icon: "fa-solid fa-palette",
       items: [
         { id: "design-presets", title: "Готовые пресеты" },
-        { id: "design-palette", title: "Цветовая палитра" },
+        { id: "design-palette", title: "Цвета магазина" },
         { id: "design-typography", title: "Шрифты и типографика" },
+        { id: "design-dark-theme", title: "Настройки тёмной темы" },
         { id: "design-width", title: "Ширина сайта" },
         { id: "design-geometry", title: "Скругления и радиусы" },
-        { id: "design-modals", title: "Модальные окна" },
+        { id: "design-modals", title: "Всплывающие окошки" },
         { id: "design-replace", title: "Найти и заменить цвета" },
         { id: "design-code", title: "Пользовательский код" }
       ]
