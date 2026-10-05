@@ -128,12 +128,24 @@
       items: [
         { id: "module-filter", title: "Вита Фильтр" },
         { id: "module-picker", title: "Подборщик товаров" },
-        { id: "module-news", title: "Вита Новости / Блог + Галерея" },
+        { id: "module-news", title: "Вита Новости / Блог" },
+        { id: "module-news-sections", title: "Новости: секции с оглавлением" },
+        { id: "module-news-settings", title: "Новости: настройки журнала" },
+        { id: "module-news-gallery", title: "Новости: галереи" },
+        { id: "module-news-comments", title: "Новости: комментарии" },
         { id: "module-faq", title: "Вита FAQ" },
         { id: "module-testimonials", title: "Отзывы о магазине" },
         { id: "module-forms", title: "Конструктор форм" },
+        { id: "module-forms-fields", title: "Формы: поля" },
+        { id: "module-forms-placement", title: "Формы: где показывать" },
+        { id: "module-forms-requests", title: "Формы: обработка заявок" },
         { id: "module-visual", title: "Визуальный конструктор" },
+        { id: "module-visual-items", title: "Визуальные блоки: элементы и точки" },
+        { id: "module-visual-display", title: "Визуальные блоки: показ" },
+        { id: "module-visual-seo", title: "Визуальные блоки: адрес и заголовки" },
         { id: "module-wall", title: "Стены категорий" },
+        { id: "module-wall-tiles", title: "Стены: плитки" },
+        { id: "module-wall-design", title: "Стены: вид и сетка" },
         { id: "module-html", title: "Универсальные HTML-блоки" },
         { id: "module-html-placement", title: "HTML-блок: где показывать" },
         { id: "module-html-shortcodes", title: "HTML-блок: живые вставки" },
@@ -452,6 +464,13 @@
     if (!searchIndexLoaded) return;
 
     const lowerQuery = query.toLowerCase();
+    // Индекс хранит служебные имена без знаков препинания (tech-footer, path=20,
+    // vcc-v1), поэтому запрос проверяем ещё и в «очищенном» виде — иначе
+    // «tech-footer» или «path=20» не нашлось бы вообще.
+    const plainQuery = lowerQuery
+      .replace(/[^\wа-яё]+/gi, " ")
+      .replace(/\s+/g, " ")
+      .trim();
     const scored = searchIndex.map(item => {
       let score = 0;
       const title = (item.title || "").toLowerCase();
@@ -464,6 +483,13 @@
       if (keywords.includes(lowerQuery)) score += 30;
       if (desc.includes(lowerQuery)) score += 10;
       if (group.includes(lowerQuery)) score += 5;
+
+      if (score === 0 && plainQuery.length >= 2) {
+        if (title.includes(plainQuery)) score += 70;
+        else if (keywords.includes(plainQuery)) score += 25;
+        else if (desc.includes(plainQuery)) score += 8;
+        else if (group.includes(plainQuery)) score += 4;
+      }
 
       return { ...item, score };
     })
