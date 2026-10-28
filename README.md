@@ -7,9 +7,9 @@
 
 ## Состав (только публикационные файлы)
 
-- `index.html` — одностраничное руководство (58 групп, поиск, тёмная тема)
+- `index.html` — одностраничное руководство (79 групп, поиск, тёмная тема)
 - `assets/vita-docs.css` / `assets/vita-docs.js` — оформление и логика
-- `assets/search-index.js` / `assets/search-index.json` — поисковый индекс (275 записей)
+- `assets/search-index.js` / `assets/search-index.json` — поисковый индекс (404 записи)
 - `.github/workflows/deploy.yml` — деплой на Pages при пуше в `main`
 
 ## Источник правды
