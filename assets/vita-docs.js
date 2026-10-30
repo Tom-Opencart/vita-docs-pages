@@ -43,6 +43,7 @@
         { id: "header-menu", title: "Меню каталога" },
         { id: "header-search", title: "Поиск и живые подсказки" },
         { id: "header-actions", title: "Корзина и действия" },
+        { id: "header-composer", title: "Композитор шапки" },
         { id: "header-mobile", title: "Мобильная шапка" },
         { id: "header-darkmode", title: "Тёмный режим" }
       ]
