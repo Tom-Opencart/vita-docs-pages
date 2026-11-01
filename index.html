@@ -85,17 +85,17 @@
             </div>
           </div>
 
-          <div class="docs-group" id="getting-started" data-ai-module="vita_theme" data-ai-map="Установка: Расширения → Установка расширений → Загрузить; активация: Расширения → Расширения → Шаблоны → Вита">
+          <div class="docs-group" id="getting-started" data-ai-module="vita_theme" data-ai-map="Установка: Расширения → Установка расширений → Загрузить; модификаторы: Расширения → Модификаторы; права: Пользователи → Группы пользователей; модули и панель: Расширения → Расширения; шаблон по умолчанию: Система → Настройки">
             <h2 class="docs-group__title">Установка и активация</h2>
-            <p class="docs-group__intro">Установка занимает пять шагов и минимум вашего времени. Выполняйте их по порядку: без третьего шага новое оформление на сайте не появится.</p>
+            <p class="docs-group__intro">Установка занимает семь шагов и минимум вашего времени. Выполняйте их по порядку: без установки модулей и выбора шаблона по умолчанию витрина останется на старом оформлении.</p>
 
             <div class="docs-setting" id="setting-1">
               <div class="docs-setting__card">
                 <div class="docs-setting__header">
-                  <h3 class="docs-setting__title">Установка шаблона</h3>
+                  <h3 class="docs-setting__title">Загрузка архива темы</h3>
                   <span class="docs-setting__badge docs-setting__badge--button">Шаг 1</span>
                 </div>
-                <p class="docs-setting__what">Скачайте архив темы и откройте в админке «Расширения» → «Установка расширений». Нажмите «Загрузить», выберите ocmod-архив темы и дождитесь сообщения об успешной установке.</p>
+                <p class="docs-setting__what">Скачайте архив темы и откройте в админке «Расширения» → «Установка расширений». Нажмите «Загрузить», выберите ocmod-архив и дождитесь сообщения об успешной установке.</p>
                 <p class="docs-setting__when">Архив ставится поверх уже установленной версии: файлы темы заменяются целиком, удалять предыдущую тему перед установкой не нужно.</p>
                 <div class="docs-setting__meta">
                   <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">Расположение:</span> <span class="docs-setting__meta-value">Расширения → Установка расширений → Загрузить</span></span>
@@ -106,13 +106,13 @@
             <div class="docs-setting" id="setting-2">
               <div class="docs-setting__card">
                 <div class="docs-setting__header">
-                  <h3 class="docs-setting__title">Активация темы</h3>
+                  <h3 class="docs-setting__title">Обновление модификаторов</h3>
                   <span class="docs-setting__badge docs-setting__badge--button">Шаг 2</span>
                 </div>
-                <p class="docs-setting__what">После установки тема лежит в списке, но не активна. Откройте «Расширения» → «Расширения» → «Шаблоны», найдите «Вита» и нажмите «Активировать» — зелёная кнопка с плюсом. Затем «Редактировать» (карандаш) и «Сохранить»: Вита станет активной темой магазина.</p>
-                <p class="docs-setting__when">Если после сохранения что-то выглядит не так — проверьте, что переключатель «Статус» в этой же форме стоит в положении «Включено».</p>
+                <p class="docs-setting__what">Откройте «Расширения» → «Модификаторы» и нажмите «Обновить» в правом верхнем углу. Тема поставляется с ocmod-модификаторами, и их кэш нужно пересобрать, иначе правки шаблонов не применятся.</p>
+                <p class="docs-setting__when">Шаг выполняется сразу после загрузки архива и повторяется после каждого обновления темы. Пропущенный шаг выглядит как поломка: файлы на месте, а витрина показывает прежнее оформление.</p>
                 <div class="docs-setting__meta">
-                  <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">Расположение:</span> <span class="docs-setting__meta-value">Расширения → Расширения → Шаблоны → Вита</span></span>
+                  <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">Расположение:</span> <span class="docs-setting__meta-value">Расширения → Модификаторы → Обновить</span></span>
                 </div>
               </div>
             </div>
@@ -120,13 +120,13 @@
             <div class="docs-setting" id="setting-3">
               <div class="docs-setting__card">
                 <div class="docs-setting__header">
-                  <h3 class="docs-setting__title">Обновление доработок темы</h3>
+                  <h3 class="docs-setting__title">Права на модули Вита</h3>
                   <span class="docs-setting__badge docs-setting__badge--button">Шаг 3</span>
                 </div>
-                <p class="docs-setting__what">Откройте «Расширения» → «Расширения» → «Модификаторы» и нажмите «Обновить» в правом верхнем углу. Тема поставляется с ocmod-модификаторами, и их кэш нужно пересобрать, иначе правки шаблонов не применятся.</p>
-                <p class="docs-setting__when">Повторяйте после каждой установки и обновления темы. Без этого магазин останется на старом оформлении — это не поломка, а пропущенный шаг.</p>
+                <p class="docs-setting__what">Откройте «Пользователи» → «Группы пользователей» и выберите группу, под которой заходите в админку. В списке прав отметьте просмотр и редактирование модулей с префиксом vita_ и сохраните группу.</p>
+                <p class="docs-setting__when">Без этих прав пункт «Шаблон Вита» не откроется, а настройки не сохранятся. Пример: группе «Администратор» доступны все модули, группе контент-менеджера достаточно просмотра и редактирования модулей vita_.</p>
                 <div class="docs-setting__meta">
-                  <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">Расположение:</span> <span class="docs-setting__meta-value">Расширения → Расширения → Модификаторы → Обновить</span></span>
+                  <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">Расположение:</span> <span class="docs-setting__meta-value">Пользователи → Группы пользователей</span></span>
                 </div>
               </div>
             </div>
@@ -134,14 +134,13 @@
             <div class="docs-setting" id="setting-4">
               <div class="docs-setting__card">
                 <div class="docs-setting__header">
-                  <h3 class="docs-setting__title">Очистка кэша</h3>
+                  <h3 class="docs-setting__title">Установка модулей и панели</h3>
                   <span class="docs-setting__badge docs-setting__badge--button">Шаг 4</span>
                 </div>
-                <p class="docs-setting__what">Магазин кэширует собранные страницы, поэтому после правок он может показывать старую версию. Откройте «Шаблон Вита → Панель настроек» и нажмите «Очистить кэш Вита» в правом верхнем углу: тема удалит собранные шаблоны, и страницы соберутся заново.</p>
-                <p class="docs-setting__what">Браузер тоже хранит копии стилей и изображений. Если после очистки кэша темы страница не изменилась, обновите её с обходом кэша: Ctrl+F5 в Windows или Cmd+Shift+R в macOS.</p>
-                <p class="docs-setting__when">Делайте это после любых изменений в оформлении — тогда покупатели точно увидят свежую версию сайта, а не закешированную старую.</p>
+                <p class="docs-setting__what">В разделе «Расширения» → «Расширения» установите кнопкой «+» все модули «Вита — …». В списке типов выберите «Шаблоны» и установите панель управления шаблоном — «Вита».</p>
+                <p class="docs-setting__when">Модули ставятся по одному: у неустановленного расширения видна кнопка «+», после установки она сменяется кнопками «Редактировать» и «Удалить». Панель управления шаблоном лежит в том же списке, но под типом «Шаблоны».</p>
                 <div class="docs-setting__meta">
-                  <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">Расположение:</span> <span class="docs-setting__meta-value">Шаблон Вита → Панель настроек → Очистить кэш Вита</span></span>
+                  <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">Расположение:</span> <span class="docs-setting__meta-value">Расширения → Расширения → Модули / Шаблоны</span></span>
                 </div>
               </div>
             </div>
@@ -149,11 +148,54 @@
             <div class="docs-setting" id="setting-5">
               <div class="docs-setting__card">
                 <div class="docs-setting__header">
-                  <h3 class="docs-setting__title">Проверка работы</h3>
+                  <h3 class="docs-setting__title">Первое сохранение панели</h3>
                   <span class="docs-setting__badge docs-setting__badge--button">Шаг 5</span>
                 </div>
-                <p class="docs-setting__what">Откройте витрину в новой вкладке и проверьте: шапка новая, цвета фирменные, меню каталога открывается. Если всё так — установка закончена.</p>
-                <p class="docs-setting__when">Если внешний вид не поменялся — вернитесь на шаг 3 и снова нажмите «Обновить» в «Модификаторы», затем на шаг 4 — очистите кэш и обновите страницу с обходом кэша браузера (Ctrl+F5 или Cmd+Shift+R). Эти два шага решают почти все случаи «ничего не изменилось».</p>
+                <p class="docs-setting__what">Откройте «Шаблон Вита» → «Панель настроек» и нажмите «Сохранить» в правом верхнем углу. Поля при первом открытии заполнены значениями по умолчанию, и к магазину они применяются этим сохранением.</p>
+                <p class="docs-setting__when">Это первый запуск панели: после сохранения настройки шапки, каталога, подвала и оформления начинают действовать на витрине.</p>
+                <div class="docs-setting__meta">
+                  <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">Расположение:</span> <span class="docs-setting__meta-value">Шаблон Вита → Панель настроек → Сохранить</span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="docs-setting" id="setting-6">
+              <div class="docs-setting__card">
+                <div class="docs-setting__header">
+                  <h3 class="docs-setting__title">Шаблон по умолчанию</h3>
+                  <span class="docs-setting__badge docs-setting__badge--button">Шаг 6</span>
+                </div>
+                <p class="docs-setting__what">Откройте «Система» → «Настройки», выберите свой магазин и укажите «Вита» в поле выбора шаблона. Сохраните настройки магазина.</p>
+                <p class="docs-setting__when">Шаг закрепляет тему за магазином. Пока шаблон не выбран в настройках магазина, установленная тема остаётся в списке расширений, а витрина работает на прежнем оформлении.</p>
+                <div class="docs-setting__meta">
+                  <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">Расположение:</span> <span class="docs-setting__meta-value">Система → Настройки → Магазин → шаблон</span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="docs-setting" id="setting-7">
+              <div class="docs-setting__card">
+                <div class="docs-setting__header">
+                  <h3 class="docs-setting__title">Проверка на витрине</h3>
+                  <span class="docs-setting__badge docs-setting__badge--button">Шаг 7</span>
+                </div>
+                <p class="docs-setting__what">Откройте витрину в новой вкладке и проверьте: шапка новая, цвета фирменные, меню каталога открывается, поиск и корзина на месте.</p>
+                <p class="docs-setting__when">Если оформление прежнее — вернитесь к шагу 2 и снова нажмите «Обновить» в «Модификаторах», затем очистите кэш темы и обновите страницу с обходом кэша браузера (Ctrl+F5 или Cmd+Shift+R).</p>
+              </div>
+            </div>
+
+            <div class="docs-setting" id="setting-cache">
+              <div class="docs-setting__card">
+                <div class="docs-setting__header">
+                  <h3 class="docs-setting__title">Очистка кэша</h3>
+                  <span class="docs-setting__badge docs-setting__badge--button">Если витрина старая</span>
+                </div>
+                <p class="docs-setting__what">Магазин кэширует собранные страницы, поэтому после правок он может показывать старую версию. Откройте «Шаблон Вита → Панель настроек» и нажмите «Очистить кэш Вита» в правом верхнем углу: тема удалит собранные шаблоны, и страницы соберутся заново.</p>
+                <p class="docs-setting__what">Браузер тоже хранит копии стилей и изображений. Если после очистки кэша темы страница не изменилась, обновите её с обходом кэша: Ctrl+F5 в Windows или Cmd+Shift+R в macOS.</p>
+                <p class="docs-setting__when">Очищайте кэш после изменений в оформлении, чтобы покупатели видели свежую версию сайта, а не сохранённую старую.</p>
+                <div class="docs-setting__meta">
+                  <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">Расположение:</span> <span class="docs-setting__meta-value">Шаблон Вита → Панель настроек → Очистить кэш Вита</span></span>
+                </div>
               </div>
             </div>
 
@@ -210,7 +252,7 @@
             <h2 class="docs-group__title">Верхняя строка</h2>
             <p class="docs-group__intro">Тонкая служебная полоска над шапкой: контакты, часы работы и кнопка ночного режима.</p>
 
-            <div class="docs-setting" id="setting-6">
+            <div class="docs-setting" id="setting-9965">
               <div class="docs-setting__card">
                 <div class="docs-setting__header">
                   <h3 class="docs-setting__title">Где показывать сервисную строку</h3>
@@ -225,7 +267,7 @@
               </div>
             </div>
 
-            <div class="docs-setting" id="setting-7">
+            <div class="docs-setting" id="setting-9966">
               <div class="docs-setting__card">
                 <div class="docs-setting__header">
                   <h3 class="docs-setting__title">Цвета верхней панели</h3>
