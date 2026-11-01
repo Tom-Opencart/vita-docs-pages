@@ -721,69 +721,6 @@ button, input, textarea {
   background: #f8fafc;
 }
 
-/* Категорийные бейджи «Что нового»: цвет плитки = категория цифры,
-   по которой вырос релиз (см. легенду «Как читать номер версии»). */
-.docs-setting__badge--ver-major {
-  border-color: #8b5cf6;
-  color: #6d28d9;
-  background: #f5f3ff;
-}
-
-.docs-setting__badge--ver-minor {
-  border-color: #10b981;
-  color: #065f46;
-  background: #ecfdf5;
-}
-
-.docs-setting__badge--ver-build {
-  border-color: #3b82f6;
-  color: #1e40af;
-  background: #eff6ff;
-}
-
-.docs-setting__badge--ver-patch {
-  border-color: #fb923c;
-  color: #9a3412;
-  background: #fff7ed;
-}
-
-/* Легенда схемы версий в «Что нового» */
-.docs-version-legend {
-  margin: 14px 0;
-  border: 1px solid var(--tm-line-muted);
-  background: var(--tm-surface-alt);
-  padding: 6px 16px;
-}
-
-.docs-version-legend__row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 10px 0;
-}
-
-.docs-version-legend__row + .docs-version-legend__row {
-  border-top: 1px solid var(--tm-line-subtle);
-}
-
-.docs-version-legend__row .docs-setting__badge {
-  width: 90px;
-  justify-content: center;
-  text-align: center;
-  white-space: normal;
-  flex-shrink: 0;
-}
-
-.docs-version-legend__text {
-  font-size: 15.5px;
-  line-height: 1.55;
-  color: var(--tm-text-secondary);
-}
-
-.docs-version-legend__text strong {
-  color: var(--tm-text);
-}
-
 /* Setting Descriptions (Clean, Large, Natural) */
 .docs-setting__what {
   font-size: 16.5px;

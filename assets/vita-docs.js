@@ -28,8 +28,7 @@
       part: "Часть I — Панель настроек шаблона",
       items: [
         { id: "getting-started", title: "Установка и активация" },
-        { id: "getting-started-check", title: "Проверка работы" },
-        { id: "getting-started-changelog", title: "Что нового" }
+        { id: "getting-started-check", title: "Проверка работы" }
       ]
     },
     {
@@ -44,8 +43,7 @@
         { id: "header-search", title: "Поиск и живые подсказки" },
         { id: "header-actions", title: "Корзина и действия" },
         { id: "header-composer", title: "Композитор шапки" },
-        { id: "header-mobile", title: "Мобильная шапка" },
-        { id: "header-darkmode", title: "Тёмный режим" }
+        { id: "header-mobile", title: "Мобильная шапка" }
       ]
     },
     {
