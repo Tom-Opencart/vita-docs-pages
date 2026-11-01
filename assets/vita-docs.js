@@ -105,7 +105,7 @@
         { id: "design-dark-theme", title: "Тёмная тема" },
         { id: "design-width", title: "Ширина сайта" },
         { id: "design-geometry", title: "Скругления и радиусы" },
-        { id: "design-modals", title: "Всплывающие окошки" },
+        { id: "design-modals", title: "Всплывающие окна" },
         { id: "design-replace", title: "Заменить цвет в настройках" },
         { id: "design-code", title: "Пользовательский код" }
       ]
