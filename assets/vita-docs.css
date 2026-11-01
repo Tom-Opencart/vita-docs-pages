@@ -4,6 +4,25 @@
    Zero Left-Borders, Zero AI-Callout Stripes
    ============================================================ */
 
+/* Шрифты лежат рядом с докой (assets/fonts), внешние CDN не нужны —
+   страница сохраняет типографику и без интернета. Файлы вариативные:
+   одно начертание на диапазон 100–900, покрывает латиницу и кириллицу. */
+@font-face {
+  font-family: 'Geist Sans';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('fonts/geist-sans-variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('fonts/geist-mono-variable.woff2') format('woff2');
+}
+
 :root {
   /* ---- Colors ---- */
   --tm-bg: #fafafa;
@@ -788,6 +807,12 @@ button, input, textarea {
   content: "Рекомендация: ";
   font-weight: 700;
   color: var(--tm-text);
+}
+
+/* Длинные пути, шорткоды и HTML в <code> не должны расширять колонку
+   на телефоне: иначе карточка уезжает за край экрана. */
+.docs-setting code {
+  overflow-wrap: anywhere;
 }
 
 /* Metadata Bar */
