@@ -27,8 +27,7 @@
       icon: "fa-solid fa-compass",
       part: "Часть I — Панель настроек шаблона",
       items: [
-        { id: "getting-started", title: "Установка и активация" },
-        { id: "getting-started-check", title: "Проверка работы" }
+        { id: "getting-started", title: "Установка и активация" }
       ]
     },
     {
@@ -42,7 +41,7 @@
         { id: "header-menu", title: "Меню каталога" },
         { id: "header-search", title: "Поиск и живые подсказки" },
         { id: "header-actions", title: "Корзина и действия" },
-        { id: "header-composer", title: "Композитор шапки" },
+        { id: "header-composer", title: "Предпросмотр шапки" },
         { id: "header-mobile", title: "Мобильная шапка" }
       ]
     },
@@ -103,11 +102,11 @@
         { id: "design-presets", title: "Готовые пресеты" },
         { id: "design-palette", title: "Цвета магазина" },
         { id: "design-typography", title: "Шрифты и типографика" },
-        { id: "design-dark-theme", title: "Настройки тёмной темы" },
+        { id: "design-dark-theme", title: "Тёмная тема" },
         { id: "design-width", title: "Ширина сайта" },
         { id: "design-geometry", title: "Скругления и радиусы" },
         { id: "design-modals", title: "Всплывающие окошки" },
-        { id: "design-replace", title: "Найти и заменить цвета" },
+        { id: "design-replace", title: "Заменить цвет в настройках" },
         { id: "design-code", title: "Пользовательский код" }
       ]
     },
@@ -150,7 +149,7 @@
         { id: "module-html-shortcodes", title: "HTML-блок: живые вставки" },
         { id: "module-html-constructor", title: "HTML-блок: Конструктор" },
         { id: "module-html-examples", title: "HTML-блок: готовые сценарии" },
-        { id: "module-allinone", title: "All-in-One / Витрина" }
+        { id: "module-allinone", title: "Универсальные блоки товаров" }
       ]
     },
     {
