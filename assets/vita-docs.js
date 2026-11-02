@@ -27,7 +27,7 @@
       icon: "fa-solid fa-compass",
       part: "Часть I — Панель настроек шаблона",
       items: [
-        { id: "getting-started", title: "Установка и активация" }
+        { id: "getting-started-install", title: "Установка и активация" }
       ]
     },
     {
