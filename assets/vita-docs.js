@@ -144,6 +144,7 @@
         { id: "module-wall", title: "Стены категорий" },
         { id: "module-wall-tiles", title: "Стены: плитки" },
         { id: "module-wall-design", title: "Стены: вид и сетка" },
+        { id: "module-categories", title: "Категории (аккордеон)" },
         { id: "module-html", title: "Универсальные HTML-блоки" },
         { id: "module-html-placement", title: "HTML-блок: где показывать" },
         { id: "module-html-shortcodes", title: "HTML-блок: живые вставки" },
