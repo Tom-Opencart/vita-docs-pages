@@ -914,6 +914,43 @@
             </div>
           </div>
 
+          <div class="docs-group" id="catalog-subcategories" data-ai-module="vita_theme" data-ai-map="Расширения → Шаблоны → Вита → Изображения; Шаблон Вита → Панель настроек → Каталог → Страница категории">
+            <h2 class="docs-group__title">Подкатегории на странице категории</h2>
+            <p class="docs-group__intro">Подкатегории над товарами можно вывести плиткой с крупным фото или компактными строками. Показ картинок включается в панели, а размер миниатюр для строк задаётся в настройках шаблона.</p>
+
+            <div class="docs-setting" id="setting-subcategory-thumb-size">
+              <div class="docs-setting__card">
+                <div class="docs-setting__header">
+                  <h3 class="docs-setting__title">Размер миниатюр подкатегорий</h3>
+                  <span class="docs-setting__badge docs-setting__badge--number">Число</span>
+                </div>
+                <p class="docs-setting__what">Поле «Размер миниатюр подкатегорий, px» задаёт сторону квадратной миниатюры в строках подкатегорий. Диапазон — 16–64 px, по умолчанию 24. Картинка кэшируется вдвое крупнее: при 24 px файл будет 48×48, а на экране миниатюра останется 24×24 — так она не размывается на Retina. В плитке изображение крупнее и этот размер не используется.</p>
+                <p class="docs-setting__what">Размер действует только на странице категории. У миниатюр в фильтре своя настройка «Размер миниатюры, px» на вкладке «Внешний вид»; она не зависит от размера карточек подкатегорий.</p>
+                <p class="docs-setting__when">Миниатюры видны, когда в «Каталог → Страница категории» включён переключатель «Показывать изображения подкатегорий» и у подкатегории задано изображение. Если картинки нет, ссылка показывает только название. Для длинного списка разделов хватает 20–24 px; 32–48 px стоит выбирать, когда подкатегорий немного и миниатюры помогают выбрать раздел.</p>
+                <div class="docs-setting__meta">
+                  <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">Расположение:</span> <span class="docs-setting__meta-value">Расширения → Шаблоны → Вита → Изображения</span></span>
+                  <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">Диапазон:</span> <span class="docs-setting__meta-value">16–64 px</span></span>
+                  <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">По умолчанию:</span> <span class="docs-setting__meta-value">24 px</span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="docs-setting" id="setting-subcategory-view">
+              <div class="docs-setting__card">
+                <div class="docs-setting__header">
+                  <h3 class="docs-setting__title">Плитка или строки</h3>
+                  <span class="docs-setting__badge docs-setting__badge--switch">Переключатель</span>
+                </div>
+                <p class="docs-setting__what">Поле «Вид подкатегорий» выбирает раскладку блока над товарами. «Плитка» выводит карточки сеткой: крупное изображение сверху, название снизу. «Строки» оставляет компактные ссылки, где миниатюра и название стоят в одну строку.</p>
+                <p class="docs-setting__when">Плитка повторяет витрину каталога и помогает выбрать раздел по картинке — как на демо-странице категории. Строки экономят высоту, когда подкатегорий много или названия длинные.</p>
+                <div class="docs-setting__meta">
+                  <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">Расположение:</span> <span class="docs-setting__meta-value">Шаблон Вита → Каталог → Страница категории → Подкатегории</span></span>
+                  <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">По умолчанию:</span> <span class="docs-setting__meta-value">Плитка</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="docs-group" id="catalog-thumb" data-ai-module="vita_theme" data-ai-map="Шаблон Вита → Панель настроек → Каталог">
             <h2 class="docs-group__title">Мини-карточка товара</h2>
             <p class="docs-group__intro">Карточка товара — маленькая витрина каждого товара: фото, цена, рейтинг и кнопка. Решаем, что на ней будет, а что — лишнее.</p>
@@ -2341,6 +2378,20 @@
               </div>
             </div>
 
+            <div class="docs-setting" id="setting-filter-categories">
+              <div class="docs-setting__card">
+                <div class="docs-setting__header">
+                  <h3 class="docs-setting__title" data-ai-map="Шаблон Вита → Фильтр товаров → Внешний вид → Отображение параметров">Категории в подборе</h3>
+                  <span class="docs-setting__badge docs-setting__badge--switch">Переключатель</span>
+                </div>
+                <p class="docs-setting__what">Над фильтрами может выводиться блок «Категории» со списком подкатегорий текущего раздела. Переключатель «Категории в подборе» скрывает весь этот блок, не затрагивая цену, бренды, характеристики и опции. Рядом настраиваются миниатюры: переключатель «Миниатюры подкатегорий в подборе» оставляет только названия, а поле «Размер миниатюры, px» задаёт компактный размер 20–24 px.</p>
+                <p class="docs-setting__when">Выключите, если навигация по разделам уже есть в меню или боковой колонке и дублируется в фильтре. По умолчанию блок включён: список категорий помогает перейти в соседний раздел, не возвращаясь наверх.</p>
+                <div class="docs-setting__meta">
+                  <span class="docs-setting__meta-item"><span class="docs-setting__meta-label">Расположение:</span> <span class="docs-setting__meta-value">Шаблон Вита → Фильтр товаров → Внешний вид → Отображение параметров</span></span>
+                </div>
+              </div>
+            </div>
+
             <div class="docs-setting" id="setting-9805">
               <div class="docs-setting__card">
                 <div class="docs-setting__header">
@@ -2441,7 +2492,7 @@
                   <h3 class="docs-setting__title">Настройки модуля</h3>
                   <span class="docs-setting__badge docs-setting__badge--select">Выбор</span>
                 </div>
-                <p class="docs-setting__what">Всё в одном окне: выбираете, какая анкета будет в этом блоке, задаёте цвет фона и подпись кнопки (если не написать — будет «Подобрать»). Кнопке можно выбрать готовую иконку — лупа, стрелка, список — или загрузить свою картинку.</p>
+                <p class="docs-setting__what">Всё в одном окне: выбираете, какая анкета будет в этом блоке, задаёте цвет фона и подпись кнопки (если не написать — будет «Подобрать»). Кнопке можно выбрать готовую иконку — лупа, стрелка, список — или загрузить свою картинку. Поле «Отображать нумерацию шагов» показывает номера 1, 2, 3 перед списками; выключите его, чтобы оставить только названия шагов. Поле «Высота блока, px» задаёт минимальную высоту подборщика (120–400 px, по умолчанию 140): если шагам нужно больше места, блок вырастет. Это же поле есть на этапе оформления мастера подборщика и в настройках модуля размещения: значение модуля переопределяет высоту подборщика, а пустое поле оставляет высоту из подборщика.</p>
 <p class="docs-setting__when">Чтобы поставить: «Расширения» → «Расширения», тип «Модули» → «Вита — Подборщик» → создать модуль → выбрать место на сайте. Поле «Макет» задаёт место вывода: например, «на главной сверху» или «во всех разделах слева».</p>
               </div>
             </div>
