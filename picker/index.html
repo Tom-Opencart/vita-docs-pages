@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Подбор вида магазина — Вита</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+  :root { --bg:#F6F7F9; --card:#FFFFFF; --text:#111827; --muted:#6B7280; --primary:#2563EB; --border:#E5E7EB; --radius:12px; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0F1115; --card:#181B22; --text:#F3F4F6; --muted:#9CA3AF; --border:#2A2F3A; } }
+  :root[data-theme="dark"] { --bg:#0F1115; --card:#181B22; --text:#F3F4F6; --muted:#9CA3AF; --border:#2A2F3A; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:560px; margin:0 auto; padding:16px; }
+  h1 { font-size:20px; margin:8px 0 4px; }
+  .lead { color:var(--muted); margin:0 0 16px; font-size:14px; }
+  .step { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:14px; margin-bottom:12px; }
+  .step h2 { font-size:15px; margin:0 0 10px; }
+  .opts { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  label.opt { border:1px solid var(--border); border-radius:10px; padding:10px; cursor:pointer; font-size:14px; display:block; }
+  label.opt input { display:none; }
+  label.opt:has(input:checked) { border-color:var(--primary); box-shadow:0 0 0 1px var(--primary) inset; }
+  .result { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:14px; white-space:pre-wrap; font-size:14px; }
+  button { width:100%; border:0; border-radius:10px; padding:12px; background:var(--primary); color:#fff; font-size:16px; cursor:pointer; margin-top:8px; }
+  .note { color:var(--muted); font-size:13px; margin-top:12px; }
+  @media (max-width:420px) { .opts { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Какой вид магазина вам нужен?</h1>
+  <p class="lead">Отметьте, что ближе к вашей задаче. Потом отправьте результат помощнику — он подскажет, куда нажать в панели.</p>
+
+  <section class="step">
+    <h2>1. Тип товаров</h2>
+    <div class="opts" id="g-goal">
+      <label class="opt"><input type="radio" name="goal" value="Одежда и обувь" checked> Одежда и обувь</label>
+      <label class="opt"><input type="radio" name="goal" value="Электроника"> Электроника</label>
+      <label class="opt"><input type="radio" name="goal" value="Дом и сад"> Дом и сад</label>
+      <label class="opt"><input type="radio" name="goal" value="Другое"> Другое</label>
+    </div>
+  </section>
+
+  <section class="step">
+    <h2>2. Главная страница</h2>
+    <div class="opts" id="g-home">
+      <label class="opt"><input type="radio" name="home" value="Витрина с баннерами" checked> Баннеры и витрина</label>
+      <label class="opt"><input type="radio" name="home" value="Категории плитками"> Категории плитками</label>
+      <label class="opt"><input type="radio" name="home" value="Новинки и хиты"> Новинки и хиты</label>
+      <label class="opt"><input type="radio" name="home" value="Минимум блоков"> Минимум блоков</label>
+    </div>
+  </section>
+
+  <section class="step">
+    <h2>3. Оформление</h2>
+    <div class="opts" id="g-look">
+      <label class="opt"><input type="radio" name="look" value="Светлое" checked> Светлое</label>
+      <label class="opt"><input type="radio" name="look" value="Тёмное"> Тёмное</label>
+      <label class="opt"><input type="radio" name="look" value="Со сменой темы"> Со сменой темы</label>
+    </div>
+  </section>
+
+  <section class="step">
+    <h2>Результат</h2>
+    <div class="result" id="out"></div>
+    <button id="copy" type="button">Скопировать для помощника</button>
+    <p class="note" id="msg"></p>
+  </section>
+</main>
+<script>
+(function () {
+  var out = document.getElementById('out');
+  var msg = document.getElementById('msg');
+  function summary() {
+    var names = ['goal', 'home', 'look'];
+    var labels = { goal: 'Тип товаров', home: 'Главная', look: 'Оформление' };
+    return 'Мне нужен такой вид магазина:\n' + names.map(function (n) {
+      var el = document.querySelector('input[name="' + n + '"]:checked');
+      return labels[n] + ': ' + (el ? el.value : '—');
+    }).join('\n');
+  }
+  function render() { out.textContent = summary(); }
+  document.querySelectorAll('input[type="radio"]').forEach(function (r) { r.addEventListener('change', render); });
+  render();
+
+  document.getElementById('copy').addEventListener('click', function () {
+    var text = summary();
+    var done = function () { msg.textContent = 'Скопировано. Вставьте в чат с помощником.'; };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { msg.textContent = 'Не удалось скопировать. Выделите текст вручную.'; });
+    } else { msg.textContent = 'Выделите текст результата вручную.'; }
+  });
+
+  try { if (window.Telegram && Telegram.WebApp) { Telegram.WebApp.ready(); Telegram.WebApp.expand(); } } catch (e) {}
+})();
+</script>
+</body>
+</html>
