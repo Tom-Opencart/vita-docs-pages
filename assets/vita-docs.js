@@ -22,6 +22,15 @@
   // part: подпись-разделитель перед группой (Часть I — панель, Часть II — модули)
   const NAV_TREE = [
     {
+      id: "about",
+      title: "Автор и покупка",
+      icon: "fa-solid fa-certificate",
+      items: [
+        { id: "about-author", title: "Автор и официальные каналы" },
+        { id: "about-support", title: "Поддержка и обновления" }
+      ]
+    },
+    {
       id: "getting-started",
       title: "Быстрый старт",
       icon: "fa-solid fa-compass",
@@ -99,7 +108,7 @@
       title: "Дизайн и стили",
       icon: "fa-solid fa-palette",
       items: [
-        { id: "design-presets", title: "Готовые пресеты" },
+        { id: "design-presets", title: "Готовые стили" },
         { id: "design-palette", title: "Цвета магазина" },
         { id: "design-typography", title: "Шрифты и типографика" },
         { id: "design-dark-theme", title: "Тёмная тема" },
@@ -190,6 +199,7 @@
     initSearch();
     initCollapsibleGroups();
     restoreHashOnLoad();
+    window.addEventListener("hashchange", restoreHashOnLoad);
   });
 
   // ===== Build Sidebar Navigation =====
@@ -375,15 +385,55 @@
     }
   }
 
-  function restoreHashOnLoad() {
-    if (window.location.hash) {
-      const target = document.querySelector(window.location.hash);
-      if (target) {
-        setTimeout(() => {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-          updateActiveNav(target.id);
-        }, 100);
+  // ===== Стабильные якоря: старый id → новый =====
+  // Карта старых якорей вшита в страницу как <script id="vita-anchor-map">.
+  // Ссылка вида #setting-99 продолжает открывать нужную карточку: хеш молча
+  // заменяется на новый id без записи в историю, чтобы «назад» не возвращал
+  // к несуществующему якорю.
+  let legacyAnchors = null;
+
+  function legacyAnchorMap() {
+    if (legacyAnchors) return legacyAnchors;
+    legacyAnchors = {};
+    try {
+      const node = document.getElementById("vita-anchor-map");
+      const parsed = node ? JSON.parse(node.textContent || "{}") : null;
+      if (parsed && parsed.legacy && typeof parsed.legacy === "object") {
+        legacyAnchors = parsed.legacy;
       }
+    } catch (err) {
+      console.warn("Anchor map not loaded:", err);
+    }
+    return legacyAnchors;
+  }
+
+  function resolveLegacyHash() {
+    if (!window.location.hash) return "";
+    let raw = window.location.hash.slice(1);
+    try {
+      raw = decodeURIComponent(raw);
+    } catch (err) { /* хеш с битым процентом — ищем как есть */ }
+    const mapped = legacyAnchorMap()[raw];
+    if (!mapped) return raw;
+    updateHash(`#${mapped}`);
+    return mapped;
+  }
+
+  function restoreHashOnLoad() {
+    const id = resolveLegacyHash();
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (target) {
+      setTimeout(() => {
+        // Переход по якорю — сразу к карточке: плавная прокрутка через
+        // пол-страницы занимает секунды и выглядит как «страница не открылась».
+        const root = document.documentElement;
+        const previous = root.style.scrollBehavior;
+        root.style.scrollBehavior = "auto";
+        target.scrollIntoView({ block: "start" });
+        root.style.scrollBehavior = previous;
+        updateActiveNav(target.id);
+      }, 100);
     }
   }
 

@@ -95,6 +95,15 @@ a {
   text-decoration: none;
 }
 
+/* Ссылки в тексте карточек: подчёркивание, иначе их не отличить от текста */
+.docs-setting__what a,
+.docs-setting__when a,
+.docs-group__intro a,
+.docs-section__header p a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 button, input, textarea {
   font: inherit;
 }
