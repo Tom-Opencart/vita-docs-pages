@@ -1842,7 +1842,7 @@
                   <h3 class="docs-setting__title">Значок сравнения в шапке</h3>
                   <span class="docs-setting__badge docs-setting__badge--switch">Переключатель</span>
                 </div>
-                <p class="docs-setting__what">Собственной настройки у значка нет: кнопка сравнения в шапке — это вкладка «Кнопки действий» в разделе «Шапка сайта», где у каждой из пяти кнопок есть свой выключатель, выбор значка и размер картинки. Пока сравнение включено, значок со счётчиком показывает, сколько товаров уже отложено: цифра «2» — в сравнении ждут два телевизора.</p>
+                <p class="docs-setting__what">Собственной настройки у значка нет: кнопка сравнения в шапке — это вкладка «Кнопки шапки» в разделе «Шапка сайта», где у каждой из пяти кнопок есть свой выключатель, выбор значка и размер картинки. Пока сравнение включено, значок со счётчиком показывает, сколько товаров уже отложено: цифра «2» — в сравнении ждут два телевизора.</p>
                 <p class="docs-setting__when">Если сравнение нужно покупателям — оставьте значок в шапке, если функция запасная — уберите: место в шапке ограничено.</p>
               </div>
             </div>
@@ -2863,14 +2863,14 @@
             <h2 class="docs-group__title">Новости: настройки всего журнала</h2>
             <p class="docs-group__intro">Одна форма на весь блог: размеры картинок, длина анонсов, комментарии и карта сайта для поисковиков.</p>
 
-            <div class="docs-setting" id="setting-razmer-kartinok-i-chislo-statey" data-field="module_vita_news_width module_vita_news_height module_vita_news_limit module_vita_news_description_length">
+            <div class="docs-setting" id="setting-razmer-kartinok-i-chislo-statey" data-field="module_vita_news_width module_vita_news_height module_vita_news_limit module_vita_news_description_length module_vita_news_name module_vita_news_category_id module_vita_news_status">
               <div class="docs-setting__card">
                 <div class="docs-setting__header">
                   <h3 class="docs-setting__title">Размер картинок и число статей</h3>
                   <span class="docs-setting__badge docs-setting__badge--number">Число</span>
                 </div>
                 <p class="docs-setting__what">Четыре поля на вкладке «Статьи»: ширина и высота картинки статьи в пикселях, сколько статей показывать на одной странице рубрики и сколько символов оставлять в анонсе. Отдельно — длина анонса в модуле новостей на главной: она своя и не зависит от анонса в рубрике.</p>
-                <p class="docs-setting__when">Размер картинки 800 × 450 и 10 статей на страницу — рабочее сочетание для каталога статей. Анонс в 120 символов обрезает текст примерно на двух строках: длиннее — плитка растёт вверх, короче 60 — покупатель не понимает, о чём материал.</p>
+                <p class="docs-setting__when">Размер картинки 800 × 450 и 10 статей на страницу — рабочее сочетание для каталога статей. Анонс в 120 символов обрезает текст примерно на двух строках: длиннее — плитка растёт вверх, короче 60 — покупатель не понимает, о чём материал. Рядом — «Название модуля», «Категория статей» (рубрика по умолчанию для блока) и «Статус»: без статуса модуль не выводится.</p>
               </div>
             </div>
 
@@ -3031,14 +3031,14 @@
               </div>
             </div>
 
-            <div class="docs-setting" id="setting-nastroyki-vyvoda-modul">
+            <div class="docs-setting" id="setting-nastroyki-vyvoda-modul" data-field="product_tab tab_title">
               <div class="docs-setting__card">
                 <div class="docs-setting__header">
                   <h3 class="docs-setting__title">Настройки вывода (модуль)</h3>
                   <span class="docs-setting__badge docs-setting__badge--switch">Переключатель</span>
                 </div>
                 <p class="docs-setting__what">Модуль «Вита — FAQ» выводит выбранную группу в заданном месте. Группу можно показать в карточке товара отдельной вкладкой — рядом с «Описание» и «Отзывы», с собственным заголовком и позицией среди вкладок.</p>
-<p class="docs-setting__when">Типовая схема: «Доставка и оплата» — на страницах доставки, вопросы про конкретную модель — вкладкой в её карточке. Покупатель получает ответы, не выходя из карточки товара.</p>
+<p class="docs-setting__when">Типовая схема: «Доставка и оплата» — на страницах доставки, вопросы про конкретную модель — вкладкой в её карточке. «Выводить вкладкой в карточке товара» включает такую вкладку, «Название вкладки» задаёт её подпись рядом с «Описание» и «Отзывы». Покупатель получает ответы, не выходя из карточки товара.</p>
               </div>
             </div>
 
@@ -3058,14 +3058,14 @@
                 <p class="docs-setting__when">Покупатели осторожнее оформляют первый заказ в незнакомом магазине. Отзывы с оценкой и городом автора убеждают лучше обещаний в баннере. Запросите отзыв после доставки: «Как вам заказ? Будем благодарны за отзыв».</p>
               </div>
             </div>
-            <div class="docs-setting" id="setting-vkladka-osnovnye-nastroyki-modulya" data-field="module_vita_testimonial_limit module_vita_testimonial_all_page_limit module_vita_testimonial_random module_vita_testimonial_character_limit module_vita_testimonial_send_to_admin module_vita_testimonial_admin_approved">
+            <div class="docs-setting" id="setting-vkladka-osnovnye-nastroyki-modulya" data-field="module_vita_testimonial_limit module_vita_testimonial_all_page_limit module_vita_testimonial_random module_vita_testimonial_character_limit module_vita_testimonial_send_to_admin module_vita_testimonial_admin_approved module_vita_testimonial_name module_vita_testimonial_status module_vita_testimonial_default_rating">
               <div class="docs-setting__card">
                 <div class="docs-setting__header">
                   <h3 class="docs-setting__title">Вкладка «Основные» (настройки модуля)</h3>
                   <span class="docs-setting__badge docs-setting__badge--switch">Переключатель</span>
                 </div>
                 <p class="docs-setting__what">«Количество отзывов на странице Все отзывы» и «Количество отзывов в модуле (карусель)», «Случайный порядок», «Сколько знаков отображать» и «Отправить отзыв Администратору по E-Mail». Самая важная настройка — «Публикация после одобрения Администратором»: отзыв появится на сайте только после вашего одобрения.</p>
-<p class="docs-setting__when">Проверку отзывов рекомендуется оставлять включённой: отзыв публикуется на вашем сайте, и ответственность за его содержание несёт магазин.</p>
+<p class="docs-setting__when">Проверку отзывов рекомендуется оставлять включённой: отзыв публикуется на вашем сайте, и ответственность за его содержание несёт магазин. Там же — «Название модуля», «Статус» и «Рейтинг по умолчанию» для новых отзывов.</p>
               </div>
             </div>
 
@@ -3632,7 +3632,7 @@
                   <h3 class="docs-setting__title">Крупная плитка 2×2</h3>
                   <span class="docs-setting__badge docs-setting__badge--switch">Переключатель</span>
                 </div>
-                <p class="docs-setting__what">Переключатель «Крупная плитка (2×2)» заставляет плитку занять область 2×2 — как одна большая плитка рядом с тремя обычными. Работает в видах «Классические плитки», «Изображение и название» и «Featured / эдиториал»; в остальных видах её лучше не включать, сетка поедет.</p>
+                <p class="docs-setting__what">Переключатель «Крупная плитка (2x2)» заставляет плитку занять область 2×2 — как одна большая плитка рядом с тремя обычными. Работает в видах «Классические плитки», «Изображение и название» и «Featured / эдиториал»; в остальных видах её лучше не включать, сетка поедет.</p>
                 <p class="docs-setting__when">Приём для одной главной категории: «Новинки» делаете крупной, остальные плитки обычными — и покупатель первым делом видит новинки. Крупных плиток лучше делать одну-две на всю стену, иначе баланс сетки ломается.</p>
               </div>
             </div>
@@ -3817,7 +3817,7 @@
               </div>
             </div>
 
-            <div class="docs-setting" id="setting-pyat-vkladok-nastroyki" data-field="name status heading_tag placement_mode full_width">
+            <div class="docs-setting" id="setting-pyat-vkladok-nastroyki" data-field="name status heading_tag module_description placement_mode full_width">
               <div class="docs-setting__card">
                 <div class="docs-setting__header">
                   <h3 class="docs-setting__title">Пять вкладок настройки</h3>
@@ -4259,13 +4259,13 @@
               </div>
             </div>
 
-            <div class="docs-setting" id="setting-vkladki-osnovnoe-i-tip-otobrazheniya" data-field="limit sort_axis width height full_width display_mode">
+            <div class="docs-setting" id="setting-vkladki-osnovnoe-i-tip-otobrazheniya" data-field="limit sort_axis width height full_width display_mode display_name products_per_row category_id manufacturer_id">
               <div class="docs-setting__card">
                 <div class="docs-setting__header">
                   <h3 class="docs-setting__title">Вкладки «Основное» и «Тип отображения»</h3>
                   <span class="docs-setting__badge docs-setting__badge--select">Выбор</span>
                 </div>                <p class="docs-setting__what">Количество товаров, сортировка, размер изображений, вывод на всю ширину и способ отображения: сетка (все карточки видны сразу) или карусель (листается стрелками и занимает меньше места).</p>
-<p class="docs-setting__when">Сетка — для больших блоков на главной, где важно разглядеть все карточки. Карусель — для второстепенных мест: подвала и узких полос, где места мало, а показать нужно больше.</p>
+<p class="docs-setting__when">Сетка — для больших блоков на главной, где важно разглядеть все карточки. Карусель — для второстепенных мест: подвала и узких полос, где места мало, а показать нужно больше. Там же — «Название модуля», «Статус», «Заголовок на витрине» и «Товаров в ряд»; для пресетов категории и бренда — выбранные категория и бренд.</p>
               </div>
             </div>
           </div>
