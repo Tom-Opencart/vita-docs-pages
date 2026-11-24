@@ -478,9 +478,11 @@
         e.preventDefault();
         focusedResultIndex = Math.max(focusedResultIndex - 1, 0);
         updateFocusedResult(items);
-      } else if (e.key === "Enter" && focusedResultIndex >= 0) {
+      } else if (e.key === "Enter") {
+        // Enter без предварительного ArrowDown открывает лучший результат —
+        // так поиск работает с клавиатуры без лишнего шага.
         e.preventDefault();
-        items[focusedResultIndex].click();
+        items[focusedResultIndex >= 0 ? focusedResultIndex : 0].click();
       } else if (e.key === "Escape") {
         closeSearchResults();
       }
@@ -505,50 +507,19 @@
     });
   }
 
+  // Скоринг живёт в docs/assets/search-core.js: тот же модуль прогоняет гейт
+  // docs/assets/check-docs-sync.js, поэтому правка весов не проходит молча.
   function performSearch(query) {
     if (!query || query.length < 2) {
       closeSearchResults();
       return;
     }
-    if (!searchIndexLoaded) return;
+    if (!searchIndexLoaded || !window.VitaSearch) return;
 
-    const lowerQuery = query.toLowerCase();
-    // Индекс хранит служебные имена без знаков препинания (tech-footer, path=20,
-    // vcc-v1), поэтому запрос проверяем ещё и в «очищенном» виде — иначе
-    // «tech-footer» или «path=20» не нашлось бы вообще.
-    const plainQuery = lowerQuery
-      .replace(/[^\wа-яё]+/gi, " ")
-      .replace(/\s+/g, " ")
-      .trim();
-    const scored = searchIndex.map(item => {
-      let score = 0;
-      const title = (item.title || "").toLowerCase();
-      const keywords = (item.keywords || "").toLowerCase();
-      const desc = (item.description || "").toLowerCase();
-      const group = (item.group || "").toLowerCase();
-
-      if (title.includes(lowerQuery)) score += 100;
-      if (title.startsWith(lowerQuery)) score += 50;
-      if (keywords.includes(lowerQuery)) score += 30;
-      if (desc.includes(lowerQuery)) score += 10;
-      if (group.includes(lowerQuery)) score += 5;
-
-      if (score === 0 && plainQuery.length >= 2) {
-        if (title.includes(plainQuery)) score += 70;
-        else if (keywords.includes(plainQuery)) score += 25;
-        else if (desc.includes(plainQuery)) score += 8;
-        else if (group.includes(plainQuery)) score += 4;
-      }
-
-      return { ...item, score };
-    })
-    .filter(item => item.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 20);
-
-    currentResults = scored;
+    const results = window.VitaSearch.rank(searchIndex, query);
+    currentResults = results;
     focusedResultIndex = -1;
-    renderSearchResults(scored);
+    renderSearchResults(results);
   }
 
   function renderSearchResults(results) {
@@ -564,7 +535,12 @@
       bySection[item.section].push(item);
     });
 
-    const sectionOrder = ["getting-started", "header", "home", "catalog", "account", "footer", "design", "ai", "modules", "email", "tips"];
+    // Порядок разделов — по лучшему совпадению, а не по умолчанию: иначе
+    // «тёмная тема» показывает сверху раздел «Быстрый старт», где она лишь
+    // упомянута, и точная карточка уезжает вниз.
+    const sectionOrder = Object.keys(bySection).sort((a, b) =>
+      Math.max(...bySection[b].map(i => i.score)) - Math.max(...bySection[a].map(i => i.score))
+    );
     const sectionLabels = {
       "getting-started": "Быстрый старт",
       "header": "Шапка сайта",
@@ -583,7 +559,7 @@
     sectionOrder.forEach(sec => {
       if (!bySection[sec]) return;
       html += `<div class="search-section"><div class="search-section__label">${sectionLabels[sec] || sec}</div>`;
-      bySection[sec].forEach(item => {
+      bySection[sec].slice(0, 4).forEach(item => {
         html += `<a href="#${item.anchor}" class="search-result-item" data-anchor="${item.anchor}" role="option">
           <div class="search-result-item__title">${escapeHtml(item.title)}</div>
           ${item.description ? `<div class="search-result-item__desc">${escapeHtml(item.description)}</div>` : ""}
