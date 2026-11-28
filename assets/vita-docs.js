@@ -116,15 +116,8 @@
         { id: "design-geometry", title: "Скругления и радиусы" },
         { id: "design-modals", title: "Всплывающие окна" },
         { id: "design-replace", title: "Заменить цвет в настройках" },
-        { id: "design-code", title: "Пользовательский код" }
-      ]
-    },
-    {
-      id: "ai",
-      title: "AI и Инспектор",
-      icon: "fa-solid fa-cube",
-      items: [
-        { id: "ai-inspector", title: "Конструктор AI (помощник на витрине)" }
+        { id: "design-code", title: "Пользовательский код" },
+        { id: "design-inspector", title: "Инспектор на витрине" }
       ]
     },
     {
@@ -549,7 +542,6 @@
       "account": "Аккаунт и оформление",
       "footer": "Подвал сайта",
       "design": "Дизайн и стили",
-      "ai": "AI и Инспектор",
       "modules": "Модули Вита",
       "email": "Письмо о заказе",
       "tips": "Советы и FAQ"
